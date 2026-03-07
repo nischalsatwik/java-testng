@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-03-07T11:49:29 IST" name="Suite" finished-at="2026-03-07T11:49:39 IST" duration-ms="9951">
+    <groups>
+    </groups>
+    <test started-at="2026-03-07T11:49:29 IST" name="Test" finished-at="2026-03-07T11:49:39 IST" duration-ms="9951">
+      <class name="practise.Firsttestcase">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:practise.Firsttestcase@2b6faea6]" started-at="2026-03-07T11:49:29 IST" name="setUp" finished-at="2026-03-07T11:49:32 IST" duration-ms="3306" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="clickFirstYouTubeLink()[pri:3, instance:practise.Firsttestcase@2b6faea6]" started-at="2026-03-07T11:49:32 IST" name="clickFirstYouTubeLink" finished-at="2026-03-07T11:49:38 IST" duration-ms="6146" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickFirstYouTubeLink -->
+        <test-method signature="openGoogle()[pri:1, instance:practise.Firsttestcase@2b6faea6]" started-at="2026-03-07T11:49:32 IST" name="openGoogle" finished-at="2026-03-07T11:49:33 IST" duration-ms="726" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openGoogle -->
+        <test-method signature="typeYouTubeInSearchBar()[pri:2, instance:practise.Firsttestcase@2b6faea6]" started-at="2026-03-07T11:49:32 IST" name="typeYouTubeInSearchBar" finished-at="2026-03-07T11:49:34 IST" duration-ms="1560" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- typeYouTubeInSearchBar -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:practise.Firsttestcase@2b6faea6]" started-at="2026-03-07T11:49:38 IST" name="tearDown" finished-at="2026-03-07T11:49:39 IST" duration-ms="449" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- practise.Firsttestcase -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
