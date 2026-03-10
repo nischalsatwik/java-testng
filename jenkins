@@ -41,7 +41,7 @@ pipeline {
          steps {
             echo "hi im in test"
 			script{
-				gv.testapp()
+				gv.testapp()}
          }
       }
       stage('Deploy') {
