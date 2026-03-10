@@ -43,7 +43,7 @@ pipeline {
     			)
 			]) 
 			{
-    			bat "some script ${User} ${pwd}"
+    			bat "echo Deploying with user %User% %pwd%"
 			}
 		echo "${params.VERSION}"
          }
