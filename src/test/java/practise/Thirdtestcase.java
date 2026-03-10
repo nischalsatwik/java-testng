@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class Secondtestcase {
+public class Thirdtestcase {
 	@Test
 	public void run() {
 		Assert.assertEquals(5, 5);
