@@ -1,3 +1,4 @@
+def gv
 pipeline {
    agent any
    parameters{
@@ -15,7 +16,10 @@ pipeline {
       stage('Build') {
          steps {
             echo "hi im in build"
-            echo "buidling version ${NEW_VERSION}"   
+            echo "buidling version ${NEW_VERSION}"
+			script{
+				gv=load "script.groovy"
+			}
          }
       }
       stage('Test') {
@@ -28,6 +32,8 @@ pipeline {
 
          steps {
             echo "hi im in test"
+			script{
+				gv.func()
          }
       }
       stage('Deploy') {
