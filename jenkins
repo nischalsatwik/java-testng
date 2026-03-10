@@ -43,7 +43,7 @@ pipeline {
     			)
 			]) 
 			{
-    			sh "some script ${User} ${pwd}"
+    			bat "some script ${User} ${pwd}"
 			}
 		echo "${params.VERSION}"
          }
