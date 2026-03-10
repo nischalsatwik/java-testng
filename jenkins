@@ -13,12 +13,20 @@ pipeline {
    }
    
    stages {
+	  stage('init'){
+		steps{
+			echo "init started"
+			script{
+				gv=load "script.groovy"
+			}
+		}
+	  }
       stage('Build') {
          steps {
             echo "hi im in build"
             echo "buidling version ${NEW_VERSION}"
 			script{
-				gv=load "script.groovy"
+				gv.buildapp()
 			}
          }
       }
@@ -33,12 +41,14 @@ pipeline {
          steps {
             echo "hi im in test"
 			script{
-				gv.func()
+				gv.testapp()
          }
       }
       stage('Deploy') {
          steps {
-           echo "hi im in deploy"
+          script{
+				gv.buildapp()
+			}
             //echo "deploying with ${SERVER_CREDENTIALS}"
            // sh "${SERVER_CREDENTIALS}"
            withCredentials([
