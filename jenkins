@@ -35,12 +35,16 @@ pipeline {
            echo "hi im in deploy"
             //echo "deploying with ${SERVER_CREDENTIALS}"
            // sh "${SERVER_CREDENTIALS}"
-           withCredentials([ 
-           usernamePassword(credentials("server-credentials",usernameVariable:User,passwordVaraible:pwd))
-            ]){
-               
-               sh "some script ${User} ${pwd}"
-           }
+           withCredentials([
+     			usernamePassword(
+        			credentialsId: 'server-credentials',
+        			usernameVariable: 'User',
+        			passwordVariable: 'pwd'
+    			)
+			]) 
+			{
+    			sh "some script ${User} ${pwd}"
+			}
 		echo "${params.VERSION}"
          }
       }
