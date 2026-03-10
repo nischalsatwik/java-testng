@@ -1,21 +1,49 @@
-pipeline{
-  agent any
-  stages{
-    stage('Build'){
-        steps{
-          echo "hi im in build"
-          }
-    }
-  stage('Test'){
-        steps{
-          echo "hi im in test"
-          }
-    }
-stage('Deploy'){
-        steps{
-          echo "hi im in deploy"
-          }
-    }
-  }
+pipeline {
+   agent any
+   parameters{
+       string(name: "VERSION", defaultValue:"3.1.1", description:'version to deploy on prod')
+       choice(name:'VERSIONS',choices:[ '1.1.0','1.1.1','1.1.2' ],description:'')
+       booleanParam(name:'executeTests',defaultValue:true,description:'')
+   }
 
+   environment {
+      NEW_VERSION='1.2.3'
+      SERVER_CREDENTIALS=credentials("server-credentials")
+   }
+   
+   stages {
+      stage('Build') {
+         steps {
+            echo "hi im in build"
+            echo "buidling version ${NEW_VERSION}"   
+         }
+      }
+      stage('Test') {
+      	when{
+      	    expression{
+      	        params.executeTests
+      	    }
+
+      	}
+
+         steps {
+            echo "hi im in test"
+         }
+      }
+      stage('Deploy') {
+         steps {
+           echo "hi im in deploy"
+            //echo "deploying with ${SERVER_CREDENTIALS}"
+           // sh "${SERVER_CREDENTIALS}"
+           withCredentials([ 
+           usernamePassword(credentials("server-credentials",usernameVariable:User,passwordVaraible:pwd))
+            ]){
+               
+               sh "some script ${User} ${pwd}"
+           }
+		echo "${params.VERSION}"
+         }
+      }
+   }
+   
 }
